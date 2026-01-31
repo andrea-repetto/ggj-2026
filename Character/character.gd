@@ -14,9 +14,20 @@ var knockback_deceleration: float = 10.0
 @onready var player_input: PlayerInput = $PlayerInput
 
 var knockback_velocity: Vector2 = Vector2.ZERO
+var disabled: bool = false
+
+
+func _notification(what: int) -> void:
+	if what == NOTIFICATION_DISABLED:
+		disabled = true
+	if what == NOTIFICATION_ENABLED:
+		disabled = false
 
 
 func _physics_process(_delta: float) -> void:
+	if disabled:
+		return
+	
 	velocity = knockback_velocity + player_input.direction * speed
 	body_sprite.flip_h = player_input.flip_h
 	head_sprite.flip_h = player_input.flip_h
@@ -31,5 +42,7 @@ func _physics_process(_delta: float) -> void:
 
 
 func knockback(from : Vector2):
+	if disabled:
+		return
 	var dir: Vector2 = (position - from).normalized()
 	knockback_velocity = dir * knockback_speed
