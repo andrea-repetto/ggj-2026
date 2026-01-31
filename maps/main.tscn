@@ -2,8 +2,10 @@
 
 [ext_resource type="PackedScene" uid="uid://dclxrpqm3f43c" path="res://Character/Character.tscn" id="1_nsuab"]
 [ext_resource type="Texture2D" uid="uid://lnvptdonb5ap" path="res://RawImages/Victorian Ballroom - Dance - Day - 24x35 - 72 DPI.jpeg" id="2_cknsb"]
+[ext_resource type="PackedScene" uid="uid://iqxxobye5fo5" path="res://ui/hud.tscn" id="3_nsuab"]
+[ext_resource type="AudioStream" uid="uid://vpu8a8xq2uy5" path="res://Sounds/Rondò Veneziano.mp3" id="4_72qrf"]
 
-[node name="Node2D" type="Node2D" unique_id=111766085]
+[node name="Node2D" type="Node" unique_id=896637833]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1660843148]
 z_index = -100
@@ -12,6 +14,7 @@ scale = Vector2(2, 2)
 texture = ExtResource("2_cknsb")
 
 [node name="Character" parent="." unique_id=906381017 instance=ExtResource("1_nsuab")]
+position = Vector2(1024, 0)
 scale = Vector2(0.6, 0.6)
 
 [node name="Camera2D" type="Camera2D" parent="Character" unique_id=2143118822]
@@ -21,8 +24,17 @@ limit_right = 2512
 limit_bottom = 1728
 limit_smoothed = true
 
+[node name="Hud" parent="Character/Camera2D" unique_id=1625275594 instance=ExtResource("3_nsuab")]
+offset_left = -1706.6666
+offset_right = -1706.6666
+
 [node name="Border" type="StaticBody2D" parent="." unique_id=1528639693]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Border" unique_id=1687626137]
 build_mode = 1
 polygon = PackedVector2Array(1728, 1344, -2048, 1344, -2048, -1344, 1728, -1344)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1014864543]
+stream = ExtResource("4_72qrf")
+autoplay = true
+parameters/looping = true
