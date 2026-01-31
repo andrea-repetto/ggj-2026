@@ -2,18 +2,18 @@
 
 [ext_resource type="Script" uid="uid://c0hg6w7kld3ix" path="res://scripts/player_input.gd" id="1_0ljut"]
 [ext_resource type="Script" uid="uid://c183gv6cm4ty6" path="res://Character/character.gd" id="1_jgnii"]
-[ext_resource type="Texture2D" uid="uid://cesyf0q4dvn17" path="res://RawImages/Idle - Ballerina Outfit dark.png" id="2_aetg1"]
+[ext_resource type="Texture2D" uid="uid://cionp2eesxh5l" path="res://assets/sprites/character/ballerina-front-idle.png" id="2_jgnii"]
 [ext_resource type="Texture2D" uid="uid://doxhqlep25o1" path="res://icon.svg" id="2_vbi5m"]
-[ext_resource type="Texture2D" uid="uid://djgntn4d58s0p" path="res://RawImages/Walk dx - Ballerina Outfit dark.png" id="4_0ljut"]
 [ext_resource type="Texture2D" uid="uid://dt2ua1a8dqx85" path="res://RawImages/side dark Jolly Mask-modified.png" id="4_aetg1"]
-[ext_resource type="Texture2D" uid="uid://bb4x0v208wx6u" path="res://RawImages/Walk sx- Ballerina Outfit dark.png" id="5_jgnii"]
+[ext_resource type="Texture2D" uid="uid://b4hcbkqjdj88x" path="res://assets/sprites/character/ballerina-right-walk-01.png" id="4_tofhs"]
+[ext_resource type="Texture2D" uid="uid://cu7nlpynf1063" path="res://assets/sprites/character/ballerina-right-walk-02.png" id="5_xsea5"]
 [ext_resource type="Texture2D" uid="uid://tpr58fefk3e3" path="res://RawImages/dark Jolly front mask-modified.png" id="6_rh25e"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_aetg1"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_aetg1")
+"texture": ExtResource("2_jgnii")
 }],
 "loop": true,
 "name": &"IDLE",
@@ -37,7 +37,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_aetg1")
+"texture": ExtResource("2_jgnii")
 }],
 "loop": true,
 "name": &"WALK_DOWN",
@@ -45,10 +45,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("4_0ljut")
+"texture": ExtResource("4_tofhs")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_jgnii")
+"texture": ExtResource("5_xsea5")
 }],
 "loop": true,
 "name": &"WALK_SIDE",
@@ -56,7 +56,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_aetg1")
+"texture": ExtResource("2_jgnii")
 }],
 "loop": true,
 "name": &"WALK_UP",
@@ -110,6 +110,7 @@ motion_mode = 1
 script = ExtResource("1_jgnii")
 
 [node name="Body" type="AnimatedSprite2D" parent="." unique_id=1094185350]
+scale = Vector2(0.25, 0.25)
 sprite_frames = SubResource("SpriteFrames_aetg1")
 animation = &"WALK_UP"
 
