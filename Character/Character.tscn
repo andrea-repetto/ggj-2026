@@ -105,6 +105,28 @@ animations = [{
 radius = 90.0
 height = 270.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_jgnii"]
+radius = 320.0
+
+[sub_resource type="GDScript" id="GDScript_jgnii"]
+script/source = "extends Node
+
+@onready var interaction_range := $\"../InteractionRange\" as Area2D
+
+
+func _physics_process(delta: float) -> void:
+	if Input.is_action_just_pressed(\"interact\"):
+		for area in interaction_range.get_overlapping_areas():
+			if area.get_parent().is_in_group(\"guest\"):
+				var guest := area.get_parent() as Guest
+				if guest.current_state == Guest.GuestState.SEEKING_PARTNER:
+					guest.dance_partner = get_parent()
+					guest.sought_partner = null
+					guest.current_state = Guest.GuestState.DANCING
+					Global.guest_changed_state.emit(guest, Guest.GuestState.DANCING)
+					Global.dancing_couple_formed.emit(get_parent(), guest)
+"
+
 [node name="Character" type="CharacterBody2D" unique_id=906381017 groups=["Bounceable"]]
 motion_mode = 1
 script = ExtResource("1_jgnii")
@@ -126,3 +148,15 @@ shape = SubResource("CapsuleShape2D_a8t6m")
 [node name="PlayerInput" type="Node" parent="." unique_id=1517145568]
 script = ExtResource("1_0ljut")
 metadata/_custom_type_script = "uid://c0hg6w7kld3ix"
+
+[node name="InteractionRange" type="Area2D" parent="." unique_id=1041057857]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionRange" unique_id=1844824901]
+shape = SubResource("CircleShape2D_jgnii")
+
+[node name="GuestInteractor" type="Node" parent="." unique_id=1427989666]
+script = SubResource("GDScript_jgnii")
+
+[connection signal="area_entered" from="InteractionRange" to="." method="_on_interaction_range_area_entered"]

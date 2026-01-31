@@ -46,3 +46,16 @@ func knockback(from : Vector2):
 		return
 	var dir: Vector2 = (position - from).normalized()
 	knockback_velocity = dir * knockback_speed
+
+
+func _on_interaction_range_area_entered(area: Area2D) -> void:
+	pass
+	#if area.get_parent().is_in_group("guest"):
+		#var guest := area.get_parent() as Guest
+		#if guest.current_state == Guest.GuestState.SEEKING_PARTNER and \
+			#Input.is_key_pressed(KEY_0):
+			#guest.dance_partner = self
+			#guest.sought_partner = null
+			#guest.current_state = Guest.GuestState.DANCING
+			#Global.guest_changed_state.emit(guest, Guest.GuestState.DANCING)
+			#Global.dancing_couple_formed.emit(self, guest)
