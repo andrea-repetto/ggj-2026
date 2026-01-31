@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://dgfymu4kpmvk2"]
+
+[ext_resource type="Script" uid="uid://ier7mo2mwqv5" path="res://Character/bouncer.gd" id="1_cnl71"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hndl5"]
+radius = 39.012817
+
+[node name="Bouncer" type="Node2D" unique_id=1179255620]
+script = ExtResource("1_cnl71")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=2077274318]
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1343406634]
+shape = SubResource("CircleShape2D_hndl5")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
