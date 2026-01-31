@@ -1,7 +1,26 @@
 [gd_scene format=3 uid="uid://b0ugtil028ogp"]
 
 [ext_resource type="Script" uid="uid://byqsbv25532n5" path="res://scripts/guest_manager.gd" id="1_007l3"]
+[ext_resource type="Texture2D" uid="uid://doxhqlep25o1" path="res://icon.svg" id="2_dt86g"]
+
+[sub_resource type="Curve2D" id="Curve2D_007l3"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 120.134995, 11.724998, 0, 0, 0, 0, 56.134995, -12.275002, 0, 0, 0, 0, 32.134995, -28.275002, 0, 0, 0, 0, 16.134995, -52.275, 0, 0, 0, 0, -7.8650055, -116.275, 0, 0, 0, 0, -31.865005, -52.275, 0, 0, 0, 0, -47.865005, -28.275002, 0, 0, 0, 0, -71.865005, -12.275002, 0, 0, 0, 0, -135.865, 11.724998, 0, 0, 0, 0, -71.865005, 35.725, 0, 0, 0, 0, -47.865005, 51.725, 0, 0, 0, 0, -31.865005, 75.725, 0, 0, 0, 0, -7.8650055, 139.725, 0, 0, 0, 0, 16.134995, 75.725, 0, 0, 0, 0, 32.134995, 51.725, 0, 0, 0, 0, 56.134995, 35.725, 0, 0, 0, 0, 120.134995, 11.724998)
+}
+point_count = 17
 
 [node name="GuestManagerScene" type="Node" unique_id=1699911913]
 script = ExtResource("1_007l3")
 metadata/_custom_type_script = "uid://byqsbv25532n5"
+
+[node name="Path2D" type="Path2D" parent="." unique_id=135489906]
+curve = SubResource("Curve2D_007l3")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D" unique_id=1252348857]
+position = Vector2(120.134995, 11.724998)
+rotation = -2.819842
+rotates = false
+cubic_interp = false
+
+[node name="Sprite2D" type="Sprite2D" parent="Path2D/PathFollow2D" unique_id=1748409254]
+texture = ExtResource("2_dt86g")

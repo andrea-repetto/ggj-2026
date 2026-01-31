@@ -1,6 +1,9 @@
 class_name GuestManagerClass
 extends Node
 
+@onready var follower : PathFollow2D = $Path2D/PathFollow2D
+var tween_step : float = 0.25
+var tween_time : float = 1.5
 
 @export var masks: Array[Mask] = [
 	preload("res://mask/mask_01.tres"),
@@ -76,7 +79,13 @@ func _ready() -> void:
 	Global.guest_added.connect(_on_guest_added)
 	Global.guest_removed.connect(_on_guest_removed)
 	Global.guest_changed_state.connect(_on_guest_changed_state)
+	dance_step()
 
+func dance_step():
+	var t : Tween = create_tween()
+	t.set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN_OUT)
+	t.tween_property(follower, "progress_ratio", follower.progress_ratio+tween_step, tween_time)
+	t.finished.connect(dance_step)
 
 func _on_guest_added(guest: Guest):
 	guest_book[guest.guest_name] = guest
@@ -111,7 +120,3 @@ func _on_guest_changed_state(guest: Guest, new_state: Guest.GuestState):
 			pass
 		Guest.GuestState.DEAD:
 			pass
-
-
-func _process(delta: float) -> void:
-	pass

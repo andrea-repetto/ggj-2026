@@ -3,6 +3,12 @@
 [ext_resource type="PackedScene" uid="uid://dclxrpqm3f43c" path="res://Character/Character.tscn" id="1_nsuab"]
 [ext_resource type="Texture2D" uid="uid://lnvptdonb5ap" path="res://RawImages/Victorian Ballroom - Dance - Day - 24x35 - 72 DPI.jpeg" id="2_cknsb"]
 
+[sub_resource type="Curve2D" id="Curve2D_cknsb"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 64, 8, 0, 0, 0, 0, 24, -16, 0, 0, 0, 0, 0, -56, 0, 0, 0, 0, -24, -16, 0, 0, 0, 0, -64, 8, 0, 0, 0, 0, -24, 32, 0, 0, 0, 0, 0, 72, 0, 0, 0, 0, 24, 32, 0, 0, 0, 0, 64, 8)
+}
+point_count = 9
+
 [node name="Node2D" type="Node2D" unique_id=111766085]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1660843148]
@@ -23,3 +29,12 @@ limit_smoothed = true
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Border" unique_id=1687626137]
 build_mode = 1
 polygon = PackedVector2Array(832, 640, -1024, 640, -1024, -640, 832, -640)
+
+[node name="Path2D" type="Path2D" parent="." unique_id=1346998505]
+position = Vector2(0, -8)
+curve = SubResource("Curve2D_cknsb")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D" unique_id=144911307]
+position = Vector2(64, 8)
+rotation = -0.54041946
+rotates = false
