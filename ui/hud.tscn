@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://d4h8mg7gih850" path="res://ui/wanted_mask_widget.tscn" id="1_rbyyf"]
 [ext_resource type="PackedScene" uid="uid://dc7uf8k3182kk" path="res://ui/tension_level_widget.tscn" id="2_276te"]
 [ext_resource type="PackedScene" uid="uid://dlexhwwvoh8k8" path="res://ui/objective_widget.tscn" id="3_546lt"]
+[ext_resource type="Script" uid="uid://bvgj1orjwp0uu" path="res://ui/hud.gd" id="4_7ihmi"]
 
 [node name="Hud" type="Control" unique_id=1625275594]
 layout_mode = 3
@@ -42,3 +43,4 @@ offset_right = 0.0
 offset_bottom = 32.0
 grow_horizontal = 0
 grow_vertical = 1
+script = ExtResource("4_7ihmi")
