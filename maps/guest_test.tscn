@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://nc42qrw8y5cw"]
+
+[ext_resource type="PackedScene" uid="uid://cwwq0q0h4onxt" path="res://characters/guest.tscn" id="1_amk8m"]
+
+[sub_resource type="Gradient" id="Gradient_lct04"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_amk8m"]
+gradient = SubResource("Gradient_lct04")
+
+[node name="GuestTest" type="Node2D" unique_id=227684858]
+
+[node name="Background" type="Sprite2D" parent="." unique_id=1266232831]
+scale = Vector2(18.34375, 3920)
+texture = SubResource("GradientTexture1D_amk8m")
+
+[node name="Guest" parent="." unique_id=1891238583 instance=ExtResource("1_amk8m")]

@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://cwwq0q0h4onxt"]
+
+[ext_resource type="Script" uid="uid://bnhxd8n3qeup3" path="res://characters/guest.gd" id="1_6s3vi"]
+[ext_resource type="PackedScene" uid="uid://dgfymu4kpmvk2" path="res://Character/Bouncer.tscn" id="1_p1gt0"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hyy81"]
+
+[node name="Guest" type="CharacterBody2D" unique_id=674562478]
+script = ExtResource("1_6s3vi")
+metadata/_custom_type_script = "uid://bnhxd8n3qeup3"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2126309749]
+shape = SubResource("CapsuleShape2D_hyy81")
+
+[node name="Bouncer" parent="." unique_id=1179255620 instance=ExtResource("1_p1gt0")]
