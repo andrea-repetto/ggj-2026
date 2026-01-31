@@ -16,5 +16,11 @@ shape = SubResource("CapsuleShape2D_hyy81")
 
 [node name="Bouncer" parent="." unique_id=1179255620 instance=ExtResource("1_p1gt0")]
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1204065071]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1204065071 groups=["guest"]]
 texture = ExtResource("3_hyy81")
+
+[node name="Timer" type="Timer" parent="." unique_id=1570320458]
+wait_time = 5.0
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_idling_timeout"]

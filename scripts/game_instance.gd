@@ -12,7 +12,6 @@ var nav_region_RID: RID
 signal guest_added(guest: Guest)
 signal guest_removed(guest: Guest)
 signal guest_changed_state(guest: Guest, new_state: Guest.GuestState)
-signal guests_paired(first_guest: Guest, second_guest: Guest)
 
 
 func _ready() -> void:
