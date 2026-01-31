@@ -26,7 +26,7 @@ func _get_current_index() -> int:
 	
 func _on_name_changed():
 	letter_order = _pick_random_permutation(len(dancer_name))
-	completion = 0
+	completion = 0.0
 
 func _pick_random_permutation(in_size: int) -> Array[int]:
 	var retval: Array[int] = []
