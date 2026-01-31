@@ -4,7 +4,7 @@ extends Control
 var display_name : String:
 	set = _set_display_name
 	
-@onready var name_label : Label = $ObjectiveTopLevelContainer/ObjectiveContainer/ObjectiveOutlinePanel/ObjectiveNameLabel
+@onready var name_label : Label = $TopLevelContainer/Outline/NameLabel
 
 func _set_display_name(in_display_name: String):
 	display_name = in_display_name
