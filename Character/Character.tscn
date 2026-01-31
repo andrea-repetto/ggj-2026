@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dclxrpqm3f43c"]
 
-[ext_resource type="Script" uid="uid://c183gv6cm4ty6" path="res://Character/character.gd" id="1_ptld2"]
+[ext_resource type="Script" uid="uid://c0hg6w7kld3ix" path="res://scripts/player_input.gd" id="1_0ljut"]
+[ext_resource type="Script" uid="uid://c183gv6cm4ty6" path="res://Character/character.gd" id="1_jgnii"]
 [ext_resource type="Texture2D" uid="uid://cesyf0q4dvn17" path="res://RawImages/Idle - Ballerina Outfit dark.png" id="2_aetg1"]
 [ext_resource type="Texture2D" uid="uid://doxhqlep25o1" path="res://icon.svg" id="2_vbi5m"]
 [ext_resource type="Texture2D" uid="uid://djgntn4d58s0p" path="res://RawImages/Walk dx - Ballerina Outfit dark.png" id="4_0ljut"]
@@ -106,11 +107,11 @@ height = 270.0
 
 [node name="Character" type="CharacterBody2D" unique_id=906381017 groups=["Bounceable"]]
 motion_mode = 1
-script = ExtResource("1_ptld2")
+script = ExtResource("1_jgnii")
 
 [node name="Body" type="AnimatedSprite2D" parent="." unique_id=1094185350]
 sprite_frames = SubResource("SpriteFrames_aetg1")
-animation = &"WALK_SIDE"
+animation = &"WALK_UP"
 
 [node name="Head" type="AnimatedSprite2D" parent="." unique_id=1824791038]
 position = Vector2(-5, -190)
@@ -120,3 +121,7 @@ animation = &"IDLE"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2065306827]
 shape = SubResource("CapsuleShape2D_a8t6m")
+
+[node name="PlayerInput" type="Node" parent="." unique_id=1517145568]
+script = ExtResource("1_0ljut")
+metadata/_custom_type_script = "uid://c0hg6w7kld3ix"
