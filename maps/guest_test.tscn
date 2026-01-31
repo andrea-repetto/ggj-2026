@@ -8,6 +8,11 @@ colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_amk8m"]
 gradient = SubResource("Gradient_lct04")
 
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_amk8m"]
+vertices = PackedVector2Array(1292.0391, 61.992188, 1294.9531, 670.96875, 183, 668.02344, 183, 61)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(173, 51, 1302, 52, 1305, 681, 173, 678)])
+
 [node name="GuestTest" type="Node2D" unique_id=227684858]
 
 [node name="Background" type="Sprite2D" parent="." unique_id=1266232831]
@@ -16,3 +21,7 @@ texture = SubResource("GradientTexture1D_amk8m")
 
 [node name="Guest" parent="." unique_id=1891238583 instance=ExtResource("1_amk8m")]
 position = Vector2(572, 339)
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="." unique_id=20027738 groups=["nav_region"]]
+position = Vector2(-162, -42)
+navigation_polygon = SubResource("NavigationPolygon_amk8m")

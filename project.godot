@@ -22,6 +22,7 @@ Global="*uid://d1fp0libowgi1"
 [global_group]
 
 Bounceable="Things that can get knockbacked. Must implement knockback()"
+nav_region=""
 
 [input]
 

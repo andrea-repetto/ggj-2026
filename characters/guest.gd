@@ -21,11 +21,7 @@ var speed: float = 10.0
 var current_state := GuestState.SEEKING_PARTNER
 
 var _dance_partner: Node2D = null
-var _movement_target := Vector2(
-	randf_range(0.0, 500.0),
-	randf_range(0.0, 500.0)
-)
-
+var _movement_target: Vector2 # Initialized through tapullo.
 
 func is_available() -> bool:
 	return current_state == GuestState.SEEKING_PARTNER
@@ -43,14 +39,19 @@ func _init() -> void:
 	motion_mode = CharacterBody2D.MOTION_MODE_FLOATING
 
 
+func _ready() -> void:
+	var tapullo = func ():
+		await get_tree().physics_frame
+		_movement_target = position
+	tapullo.call_deferred()
+
+
 func _process(delta: float) -> void:
 	match current_state:
 		GuestState.SEEKING_PARTNER:
 			if position.distance_squared_to(_movement_target) < DISTANCE_THRESHOLD_SQUARED:
-				_movement_target = Vector2(
-					randf_range(0.0, 1000.0),
-					randf_range(0.0, 1000.0)
-				)
+				_movement_target = \
+					NavigationServer2D.region_get_random_point(Global.nav_region_RID, 0, false)
 		GuestState.GETTING_TO_DANCE_POSITION: 
 			print("Scusi, vuol ballare con me~~?")
 		GuestState.DANCING:
