@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://dc7uf8k3182kk"]
+
+[ext_resource type="Script" uid="uid://cfv64t3rcvtu1" path="res://ui/tension_level_widget.gd" id="1_f4enq"]
+[ext_resource type="Texture2D" uid="uid://doxhqlep25o1" path="res://icon.svg" id="2_01w4p"]
+
+[node name="TensionLevelWidget" type="Control" unique_id=807171946]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_f4enq")
+
+[node name="TensionLevel_TopLevelContainer" type="VBoxContainer" parent="." unique_id=1714782807]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -66.5
+offset_right = 66.5
+offset_bottom = 155.0
+grow_horizontal = 2
+alignment = 1
+
+[node name="TensionLevel_Label" type="Label" parent="TensionLevel_TopLevelContainer" unique_id=1779946720]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+text = "Tension"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TensionLevel_Container" type="HBoxContainer" parent="TensionLevel_TopLevelContainer" unique_id=1737251682]
+layout_mode = 2
+
+[node name="TensionLevel_Icon" type="TextureRect" parent="TensionLevel_TopLevelContainer/TensionLevel_Container" unique_id=1661395095]
+layout_mode = 2
+texture = ExtResource("2_01w4p")
+
+[node name="TensionLevel_Progress" type="TextureProgressBar" parent="TensionLevel_TopLevelContainer/TensionLevel_Container" unique_id=1821858924]
+layout_mode = 2

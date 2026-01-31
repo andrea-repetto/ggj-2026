@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://dlexhwwvoh8k8"]
+
+[node name="ObjectiveWidget" type="Control" unique_id=807171946]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ObjectiveTopLevelContainer" type="VBoxContainer" parent="." unique_id=1714782807]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -73.0
+offset_bottom = 50.0
+grow_horizontal = 0
+
+[node name="ObjectiveLabel" type="Label" parent="ObjectiveTopLevelContainer" unique_id=1779946720]
+layout_mode = 2
+text = "Objective"
+
+[node name="ObjectiveContainer" type="HBoxContainer" parent="ObjectiveTopLevelContainer" unique_id=1737251682]
+layout_mode = 2
+
+[node name="ObjectiveIcon" type="TextureRect" parent="ObjectiveTopLevelContainer/ObjectiveContainer" unique_id=1661395095]
+layout_mode = 2
+
+[node name="ObjectiveOutlinePanel" type="PanelContainer" parent="ObjectiveTopLevelContainer/ObjectiveContainer" unique_id=96977224]
+layout_mode = 2
+
+[node name="ObjectiveNameLabel" type="Label" parent="ObjectiveTopLevelContainer/ObjectiveContainer/ObjectiveOutlinePanel" unique_id=1851326773]
+layout_mode = 2

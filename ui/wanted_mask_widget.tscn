@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://d4h8mg7gih850"]
+
+[ext_resource type="Script" uid="uid://b7vmhe63nmukt" path="res://ui/wanted_mask_widget.gd" id="1_hl6q0"]
+
+[node name="WantedMaskWidget" type="Control" unique_id=2013200229]
+layout_mode = 3
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 256.0
+offset_bottom = -584.0
+grow_vertical = 2
+script = ExtResource("1_hl6q0")
+
+[node name="TopLevelContainer" type="HBoxContainer" parent="." unique_id=456644102]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="WantedLabel" type="Label" parent="TopLevelContainer" unique_id=436507138]
+layout_mode = 2
+text = "Wanted"
+
+[node name="WantedMaskTexture" type="TextureRect" parent="TopLevelContainer" unique_id=1245956275]
+layout_mode = 2
+expand_mode = 2
