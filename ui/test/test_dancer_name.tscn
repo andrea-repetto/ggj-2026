@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://ddlrpq58v3tcx"]
+
+[ext_resource type="PackedScene" uid="uid://ce8xkd5hun7gy" path="res://ui/dancer_name_widget.tscn" id="1_7vs6n"]
+[ext_resource type="Script" uid="uid://bo82vn5ma3hk7" path="res://ui/test/test_dancer_name.gd" id="1_p6pwd"]
+
+[node name="TestDancerName" type="Node2D" unique_id=670650674]
+script = ExtResource("1_p6pwd")
+
+[node name="DancerNameWidget" parent="." unique_id=724430109 instance=ExtResource("1_7vs6n")]

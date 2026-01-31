@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://d1fp0libowgi1"]
+
+[ext_resource type="Script" uid="uid://du8f52oblm41k" path="res://scripts/game_instance.gd" id="1_vqw2f"]
+
+[node name="GameInstance" type="Node" unique_id=488708972]
+script = ExtResource("1_vqw2f")
+metadata/_custom_type_script = "uid://du8f52oblm41k"

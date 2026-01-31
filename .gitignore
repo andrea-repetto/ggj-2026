@@ -18,3 +18,5 @@ mono_crash.*.json
 # Rider-specific ignores
 .idea/
 
+# Sandbox folder
+[Ss]andbox/

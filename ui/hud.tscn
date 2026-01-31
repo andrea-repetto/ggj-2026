@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://iqxxobye5fo5"]
+
+[ext_resource type="PackedScene" uid="uid://d4h8mg7gih850" path="res://ui/wanted_mask_widget.tscn" id="1_rbyyf"]
+[ext_resource type="PackedScene" uid="uid://dc7uf8k3182kk" path="res://ui/tension_level_widget.tscn" id="2_276te"]
+[ext_resource type="PackedScene" uid="uid://dlexhwwvoh8k8" path="res://ui/objective_widget.tscn" id="3_546lt"]
+
+[node name="Hud" type="Control" unique_id=1625275594]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="WantedMaskWidget" parent="." unique_id=2013200229 instance=ExtResource("1_rbyyf")]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 1
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 75.0
+offset_bottom = 42.0
+pivot_offset = Vector2(10, 0)
+
+[node name="TensionLevelWidget" parent="." unique_id=807171946 instance=ExtResource("2_276te")]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.0
+offset_left = -128.0
+offset_right = 128.0
+offset_bottom = 32.0
+grow_vertical = 1
+
+[node name="ObjectiveWidget" parent="." unique_id=761866265 instance=ExtResource("3_546lt")]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_bottom = 0.0
+offset_left = -297.0
+offset_right = 0.0
+offset_bottom = 32.0
+grow_horizontal = 0
+grow_vertical = 1

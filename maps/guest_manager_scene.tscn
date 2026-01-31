@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://b0ugtil028ogp"]
+
+[ext_resource type="Script" uid="uid://byqsbv25532n5" path="res://scripts/guest_manager.gd" id="1_007l3"]
+
+[node name="GuestManagerScene" type="Node" unique_id=1699911913]
+script = ExtResource("1_007l3")
+metadata/_custom_type_script = "uid://byqsbv25532n5"
