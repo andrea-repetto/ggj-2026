@@ -19,7 +19,8 @@ enum GuestState {
 @export_range(0.1, 1.0, 0.1, "or_greater", "hide_slider")
 var speed: float = 10.0
 
-var guest_name: String = "Pancrazio Cormorano"
+var guest_name: String = ""
+var held_mask: Mask
 
 var current_state := GuestState.IDLING
 var sought_partner: Guest = null
@@ -43,6 +44,11 @@ func set_partner(dance_partner: Node2D) -> bool:
 
 func _init() -> void:
 	motion_mode = CharacterBody2D.MOTION_MODE_FLOATING
+	guest_name = "%s %s" % [
+		GuestManager.surnames.pick_random(),
+		GuestManager.male_names.pick_random() if randi() % 2 == 0 else GuestManager.female_names.pick_random()
+	]
+	held_mask = GuestManager.masks.pick_random()
 
 
 func _ready() -> void:

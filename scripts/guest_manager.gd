@@ -1,6 +1,72 @@
 class_name GuestManagerClass
 extends Node
 
+
+@export var masks: Array[Mask] = [
+	preload("res://mask/mask_01.tres"),
+	preload("res://mask/mask_02.tres"),
+	preload("res://mask/mask_03.tres"),
+]
+
+@export var male_names: Array[String] = [
+	"Alvise",
+	"Zorzi",
+	"Sebastiano",
+	"Nicolò",
+	"Zuane",
+	"Antonio",
+	"Matteo",
+	"Michele",
+	"Marco",
+	"Andrea",
+	"Lorenzo",
+	"Vittorio",
+	"Domenico",
+	"Leonardo",
+	"Girolamo",
+]
+
+@export var female_names: Array[String] =  [
+	"Bianca",
+	"Contarina",
+	"Lucrezia",
+	"Elisabetta",
+	"Caterina",
+	"Chiara",
+	"Isotta",
+	"Laura",
+	"Cornelia",
+	"Violante",
+	"Beatrice",
+	"Agnese",
+	"Marina",
+	"Zanetta",
+	"Modesta",
+]
+
+@export var surnames: Array[String] = [
+	"Contarini",
+	"Morosini",
+	"Mocenigo",
+	"Corner",
+	"Dandolo",
+	"Falier",
+	"Gradenigo",
+	"Grimani",
+	"Loredan",
+	"Michiel",
+	"Priuli",
+	"Vendramin",
+	"Barbarigo",
+	"Foscari",
+	"Pisani",
+	"Gritti",
+	"Querini",
+	"Squero",
+	"Fornasari",
+]
+
+
 var guest_book: Dictionary[String, Guest] = {}
 
 var seeking_queue: Array[Guest] = []
