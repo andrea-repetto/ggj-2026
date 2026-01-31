@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://dnfgyoxcxkg5y"]
+
+[ext_resource type="Script" uid="uid://cagp77128m1y0" path="res://scripts/dancing_couple.gd" id="1_c5tlm"]
+
+[node name="DancingCouple" type="Node" unique_id=164636376]
+script = ExtResource("1_c5tlm")
+metadata/_custom_type_script = "uid://cagp77128m1y0"

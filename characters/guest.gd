@@ -36,7 +36,7 @@ func is_available() -> bool:
 func set_partner(dance_partner: Node2D) -> bool:
 	if is_instance_valid(dance_partner) and is_available():
 		self.dance_partner = dance_partner
-		current_state = GuestState.GETTING_TO_DANCE_POSITION
+		current_state = GuestState.DANCING
 		Global.guest_changed_state.emit(self, GuestState.GETTING_TO_DANCE_POSITION)
 		return true
 	return false
@@ -113,3 +113,4 @@ func _on_interaction_circle_body_entered(body: Node2D) -> void:
 		
 		Global.guest_changed_state.emit(self, GuestState.DANCING)
 		Global.guest_changed_state.emit(other, GuestState.DANCING)
+		Global.dancing_couple_formed.emit(self, other)

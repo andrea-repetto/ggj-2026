@@ -5,6 +5,8 @@ extends Node
 var tween_step : float = 0.25
 var tween_time : float = 1.5
 
+var dancing_couple_scene: PackedScene = preload("res://scripts/dancing_couple.tscn")
+
 @export var masks: Array[Mask] = [
 	preload("res://mask/mask_01.tres"),
 	preload("res://mask/mask_02.tres"),
@@ -71,14 +73,15 @@ var tween_time : float = 1.5
 
 
 var guest_book: Dictionary[String, Guest] = {}
-
 var seeking_queue: Array[Guest] = []
+var dancing_couples: Array[DancingCouple] = []
 
 
 func _ready() -> void:
 	Global.guest_added.connect(_on_guest_added)
 	Global.guest_removed.connect(_on_guest_removed)
 	Global.guest_changed_state.connect(_on_guest_changed_state)
+	Global.dancing_couple_formed.connect(_on_dancing_couple_formed)
 	dance_step()
 
 func dance_step():
@@ -102,6 +105,7 @@ func _on_guest_changed_state(guest: Guest, new_state: Guest.GuestState):
 	match new_state:
 		Guest.GuestState.IDLING:
 			pass
+		
 		Guest.GuestState.SEEKING_PARTNER:
 			seeking_queue.append(guest)
 			if seeking_queue.size() > 1:
@@ -120,3 +124,13 @@ func _on_guest_changed_state(guest: Guest, new_state: Guest.GuestState):
 			pass
 		Guest.GuestState.DEAD:
 			pass
+
+
+func _on_dancing_couple_formed(dancer1: Node2D, dancer2: Node2D) -> void:
+	# Assuming that both dancers have the same parent.
+	var dancers_parent := dancer1.get_parent()
+	
+	var dancing_couple := dancing_couple_scene.instantiate() as DancingCouple
+	dancing_couple.initialize([dancer1, dancer2])
+	dancers_parent.add_child.call_deferred(dancing_couple)
+	dancing_couples.append(dancing_couple)
