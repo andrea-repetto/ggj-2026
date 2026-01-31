@@ -1,5 +1,5 @@
 class_name ObjectiveWidget
-extends Node
+extends Control
 
 var display_name : String:
 	set = _set_display_name
