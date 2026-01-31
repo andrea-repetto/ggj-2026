@@ -20,6 +20,11 @@ config/icon="res://icon.svg"
 Global="*uid://d1fp0libowgi1"
 GuestManager="*uid://b0ugtil028ogp"
 
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+
 [global_group]
 
 Bounceable="Things that can get knockbacked. Must implement knockback()"

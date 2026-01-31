@@ -1,10 +1,11 @@
 [gd_scene format=3 uid="uid://dclxrpqm3f43c"]
 
 [ext_resource type="Script" uid="uid://c183gv6cm4ty6" path="res://Character/character.gd" id="1_ptld2"]
-[ext_resource type="Texture2D" uid="uid://dnsuyqp72ngh7" path="res://RawImages/Idle - Ballerina Outfit.png" id="2_aetg1"]
+[ext_resource type="Texture2D" uid="uid://cesyf0q4dvn17" path="res://RawImages/Idle - Ballerina Outfit dark.png" id="2_aetg1"]
 [ext_resource type="Texture2D" uid="uid://doxhqlep25o1" path="res://icon.svg" id="2_vbi5m"]
-[ext_resource type="Texture2D" uid="uid://cl5w7kye8y3av" path="res://RawImages/Walk dx - Ballerina Outfit.png" id="4_rh25e"]
-[ext_resource type="Texture2D" uid="uid://drbnnahujwy3n" path="res://RawImages/Walk sx- Ballerina Outfit.png" id="5_0ljut"]
+[ext_resource type="Texture2D" uid="uid://djgntn4d58s0p" path="res://RawImages/Walk dx - Ballerina Outfit dark.png" id="4_0ljut"]
+[ext_resource type="Texture2D" uid="uid://dt2ua1a8dqx85" path="res://RawImages/side dark Jolly Mask-modified.png" id="4_aetg1"]
+[ext_resource type="Texture2D" uid="uid://bb4x0v208wx6u" path="res://RawImages/Walk sx- Ballerina Outfit dark.png" id="5_jgnii"]
 [ext_resource type="Texture2D" uid="uid://tpr58fefk3e3" path="res://RawImages/dark Jolly front mask-modified.png" id="6_rh25e"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_aetg1"]
@@ -35,7 +36,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_vbi5m")
+"texture": ExtResource("2_aetg1")
 }],
 "loop": true,
 "name": &"WALK_DOWN",
@@ -43,10 +44,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("4_rh25e")
+"texture": ExtResource("4_0ljut")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_0ljut")
+"texture": ExtResource("5_jgnii")
 }],
 "loop": true,
 "name": &"WALK_SIDE",
@@ -54,40 +55,66 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_vbi5m")
+"texture": ExtResource("2_aetg1")
 }],
 "loop": true,
 "name": &"WALK_UP",
 "speed": 5.0
 }]
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_a8t6m"]
+load_path = "res://.godot/imported/dark Jolly front mask-modified.png-663da6eed69c0b59087d687675aefe4e.ctex"
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_rh25e"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_a8t6m")
+}],
+"loop": true,
+"name": &"IDLE",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("6_rh25e")
 }],
 "loop": true,
-"name": &"IDLE",
+"name": &"WALK_DOWN",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_aetg1")
+}],
+"loop": true,
+"name": &"WALK_SIDE",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_rh25e")
+}],
+"loop": true,
+"name": &"WALK_UP",
 "speed": 5.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_a8t6m"]
-radius = 125.0
-height = 350.0
+radius = 90.0
+height = 270.0
 
 [node name="Character" type="CharacterBody2D" unique_id=906381017 groups=["Bounceable"]]
 motion_mode = 1
 script = ExtResource("1_ptld2")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1094185350]
-scale = Vector2(0.3, 0.3)
+[node name="Body" type="AnimatedSprite2D" parent="." unique_id=1094185350]
 sprite_frames = SubResource("SpriteFrames_aetg1")
 animation = &"WALK_SIDE"
 
-[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="." unique_id=1824791038]
-position = Vector2(3, -234)
-scale = Vector2(0.09899757, 0.0976684)
+[node name="Head" type="AnimatedSprite2D" parent="." unique_id=1824791038]
+position = Vector2(-5, -190)
+scale = Vector2(0.1, 0.1)
 sprite_frames = SubResource("SpriteFrames_rh25e")
 animation = &"IDLE"
 

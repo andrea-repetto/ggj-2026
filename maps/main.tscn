@@ -1,17 +1,25 @@
 [gd_scene format=3 uid="uid://8lg2eyev1fmi"]
 
 [ext_resource type="PackedScene" uid="uid://dclxrpqm3f43c" path="res://Character/Character.tscn" id="1_nsuab"]
-[ext_resource type="PackedScene" uid="uid://dgfymu4kpmvk2" path="res://Character/Bouncer.tscn" id="2_72qrf"]
-[ext_resource type="Texture2D" uid="uid://doxhqlep25o1" path="res://icon.svg" id="3_oduwx"]
+[ext_resource type="Texture2D" uid="uid://lnvptdonb5ap" path="res://RawImages/Victorian Ballroom - Dance - Day - 24x35 - 72 DPI.jpeg" id="2_cknsb"]
 
 [node name="Node2D" type="Node2D" unique_id=111766085]
 
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1660843148]
+rotation = 1.5707964
+texture = ExtResource("2_cknsb")
+
 [node name="Character" parent="." unique_id=906381017 instance=ExtResource("1_nsuab")]
 
-[node name="Bouncer" parent="." unique_id=1179255620 instance=ExtResource("2_72qrf")]
-position = Vector2(650, 340)
+[node name="Camera2D" type="Camera2D" parent="Character" unique_id=2143118822]
+limit_left = -1256
+limit_top = -864
+limit_right = 1256
+limit_bottom = 864
+limit_smoothed = true
 
-[node name="Icon" type="Sprite2D" parent="." unique_id=1649968223]
-position = Vector2(648, 342)
-scale = Vector2(0.421875, 0.4296875)
-texture = ExtResource("3_oduwx")
+[node name="Border" type="StaticBody2D" parent="." unique_id=1528639693]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Border" unique_id=1687626137]
+build_mode = 1
+polygon = PackedVector2Array(832, 640, -1024, 640, -1024, -640, 832, -640)

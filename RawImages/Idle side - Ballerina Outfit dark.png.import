@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dnsuyqp72ngh7"
-path="res://.godot/imported/Idle - Ballerina Outfit.png-9c053b2021f02bf356ed5e0d6d54f85b.ctex"
+uid="uid://d1dwnolxnmpjb"
+path="res://.godot/imported/Idle side - Ballerina Outfit dark.png-c609eedd862c894002b8ffd33258a235.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://RawImages/Idle - Ballerina Outfit.png"
-dest_files=["res://.godot/imported/Idle - Ballerina Outfit.png-9c053b2021f02bf356ed5e0d6d54f85b.ctex"]
+source_file="res://RawImages/Idle side - Ballerina Outfit dark.png"
+dest_files=["res://.godot/imported/Idle side - Ballerina Outfit dark.png-c609eedd862c894002b8ffd33258a235.ctex"]
 
 [params]
 
