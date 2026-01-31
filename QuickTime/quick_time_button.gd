@@ -39,6 +39,9 @@ func _input(event: InputEvent) -> void:
 		correct.emit()
 		current_action = ""
 		has_pressed = true
+		var t : Tween = create_tween()
+		t.tween_property(%TextureRect, "scale", Vector2(1.5,1.5), 0.3)
+		t.tween_property(%TextureRect, "scale", Vector2(0.3,0.3), 1.6)
 		return
 	for a : String in action_strings.keys() :
 		if event.is_action(a) && listen_input: 
@@ -46,6 +49,9 @@ func _input(event: InputEvent) -> void:
 			current_action = ""
 			has_pressed = true
 			listen_input = false
+			var t : Tween = create_tween()
+			t.tween_property(%TextureRect, "scale", Vector2(1.5,1.5), 0.3)
+			t.tween_property(%TextureRect, "scale", Vector2(0.3,0.3), 1.6)
 			return
 
 func _start_listen():
