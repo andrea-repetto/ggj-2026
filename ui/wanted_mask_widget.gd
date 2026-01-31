@@ -3,7 +3,7 @@ extends Control
 
 var mask: Mask:
 	set = _set_current_mask
-@onready var texture : TextureRect = $WantedMaskTexture
+@onready var texture : TextureRect = $TopLevelContainer/WantedMaskTexture
 
 func _set_current_mask(in_mask: Mask):
 	mask = in_mask

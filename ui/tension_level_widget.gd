@@ -4,7 +4,7 @@ extends Control
 var tension_value : float:
 	set = _set_tension
 	
-@onready var tension_progress : TextureProgressBar = $Progress
+@onready var tension_progress : TextureProgressBar = $TopLevelContainer/Progresss
 
 func _set_tension(in_tension: float):
 	tension_value = in_tension

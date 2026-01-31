@@ -3,21 +3,30 @@
 [ext_resource type="Script" uid="uid://cfv64t3rcvtu1" path="res://ui/tension_level_widget.gd" id="1_f4enq"]
 [ext_resource type="Texture2D" uid="uid://doxhqlep25o1" path="res://icon.svg" id="2_01w4p"]
 
-[node name="TensionLevelWidget" type="HBoxContainer" unique_id=1737251682]
+[node name="TensionLevelWidget" type="Control" unique_id=27047908]
 custom_minimum_size = Vector2(256, 32)
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -128.0
-offset_right = 128.0
-offset_bottom = 32.0
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -896.0
+offset_bottom = -616.0
 grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_f4enq")
 
-[node name="Icon" type="TextureRect" parent="." unique_id=1661395095]
+[node name="TopLevelContainer" type="HBoxContainer" parent="." unique_id=1737251682]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Icon" type="TextureRect" parent="TopLevelContainer" unique_id=1661395095]
 layout_mode = 2
 texture = ExtResource("2_01w4p")
 expand_mode = 2
 
-[node name="Progress" type="TextureProgressBar" parent="." unique_id=1821858924]
+[node name="Progress" type="TextureProgressBar" parent="TopLevelContainer" unique_id=1821858924]
 layout_mode = 2

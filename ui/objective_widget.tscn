@@ -3,23 +3,35 @@
 [ext_resource type="Script" uid="uid://cbave1kaapacc" path="res://ui/objective_widget.gd" id="1_kw5su"]
 [ext_resource type="Texture2D" uid="uid://doxhqlep25o1" path="res://icon.svg" id="2_dxqyt"]
 
-[node name="ObjectiveWidget" type="HBoxContainer" unique_id=1737251682]
+[node name="ObjectiveWidget" type="Control" unique_id=1929801292]
 custom_minimum_size = Vector2(256, 32)
-anchors_preset = 1
-anchor_left = 1.0
+layout_mode = 3
+anchors_preset = 15
 anchor_right = 1.0
-offset_left = -73.0
-offset_bottom = 32.0
-grow_horizontal = 0
+anchor_bottom = 1.0
+offset_right = -896.0
+offset_bottom = -616.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_kw5su")
 
-[node name="Icon" type="TextureRect" parent="." unique_id=1661395095]
+[node name="TopLevelContainer" type="HBoxContainer" parent="." unique_id=1737251682]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -228.0
+offset_bottom = -9.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Icon" type="TextureRect" parent="TopLevelContainer" unique_id=1661395095]
 layout_mode = 2
 texture = ExtResource("2_dxqyt")
 expand_mode = 2
 
-[node name="Outline" type="PanelContainer" parent="." unique_id=96977224]
+[node name="Outline" type="PanelContainer" parent="TopLevelContainer" unique_id=96977224]
 layout_mode = 2
 
-[node name="NameLabel" type="Label" parent="Outline" unique_id=1851326773]
+[node name="NameLabel" type="Label" parent="TopLevelContainer/Outline" unique_id=1851326773]
 layout_mode = 2
