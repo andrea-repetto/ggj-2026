@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://ce8xkd5hun7gy"]
+
+[ext_resource type="Script" uid="uid://8pbm68q2eofo" path="res://ui/dancer_name_widget.gd" id="1_xmk2e"]
+
+[node name="DancerNameWidget" type="Control" unique_id=724430109]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xmk2e")
+
+[node name="DancerNameLabel" type="Label" parent="." unique_id=967201190]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Placeholder"
