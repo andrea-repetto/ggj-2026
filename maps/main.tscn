@@ -15,7 +15,6 @@ texture = ExtResource("2_cknsb")
 
 [node name="Character" parent="." unique_id=906381017 instance=ExtResource("1_nsuab")]
 position = Vector2(1024, 0)
-scale = Vector2(0.6, 0.6)
 
 [node name="Camera2D" type="Camera2D" parent="Character" unique_id=2143118822]
 limit_left = -2512
@@ -23,10 +22,6 @@ limit_top = -1728
 limit_right = 2512
 limit_bottom = 1728
 limit_smoothed = true
-
-[node name="Hud" parent="Character/Camera2D" unique_id=1625275594 instance=ExtResource("3_nsuab")]
-offset_left = -1706.6666
-offset_right = -1706.6666
 
 [node name="Border" type="StaticBody2D" parent="." unique_id=1528639693]
 
@@ -38,3 +33,7 @@ polygon = PackedVector2Array(1728, 1344, -2048, 1344, -2048, -1344, 1728, -1344)
 stream = ExtResource("4_72qrf")
 autoplay = true
 parameters/looping = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=454165866]
+
+[node name="Hud" parent="CanvasLayer" unique_id=1625275594 instance=ExtResource("3_nsuab")]
