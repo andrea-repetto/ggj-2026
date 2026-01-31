@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://b2xuync31qria"]
+
+[ext_resource type="Texture2D" uid="uid://doxhqlep25o1" path="res://icon.svg" id="1_d6hld"]
+
+[node name="WidgetActions" type="Control" unique_id=1498810020]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TopLevelContainer" type="VBoxContainer" parent="." unique_id=217933331]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MoveAction" type="HBoxContainer" parent="TopLevelContainer" unique_id=662957434]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+
+[node name="Icon" type="TextureRect" parent="TopLevelContainer/MoveAction" unique_id=345778140]
+layout_mode = 2
+texture = ExtResource("1_d6hld")
+expand_mode = 2
+
+[node name="Label" type="Label" parent="TopLevelContainer/MoveAction" unique_id=2019135551]
+layout_mode = 2
+text = "Move"
+
+[node name="KillAction" type="HBoxContainer" parent="TopLevelContainer" unique_id=1660085929]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+
+[node name="Icon" type="TextureRect" parent="TopLevelContainer/KillAction" unique_id=1832977457]
+layout_mode = 2
+texture = ExtResource("1_d6hld")
+expand_mode = 2
+
+[node name="Label" type="Label" parent="TopLevelContainer/KillAction" unique_id=500538004]
+layout_mode = 2
+text = "Kill"
+
+[node name="DanceAction" type="HBoxContainer" parent="TopLevelContainer" unique_id=1580268788]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+
+[node name="Icon" type="TextureRect" parent="TopLevelContainer/DanceAction" unique_id=1143712589]
+layout_mode = 2
+texture = ExtResource("1_d6hld")
+expand_mode = 2
+
+[node name="Label" type="Label" parent="TopLevelContainer/DanceAction" unique_id=2105591632]
+layout_mode = 2
+text = "Dance"
