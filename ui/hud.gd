@@ -11,15 +11,12 @@ func _ready() -> void:
 	Global.tension_changed.connect(handle_tension_changed)
 	Global.mask_changed.connect(handle_mask_changed)
 	Global.objective_changed.connect(handle_objective_changed)
-	pass # Replace with function body.
 	
 func handle_tension_changed(in_tension: float):
 	tension_widget.tension_value = in_tension
 	
 func handle_mask_changed(in_mask: Mask):
 	mask_widget.mask = in_mask
-	pass
 	
 func handle_objective_changed(in_name: String):
 	objective_widget.display_name = in_name
-	pass
