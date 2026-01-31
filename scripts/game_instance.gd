@@ -9,6 +9,12 @@ var current_tension: float = 0.0
 var nav_region_RID: RID
 
 
+signal guest_added(guest: Guest)
+signal guest_removed(guest: Guest)
+signal guest_changed_state(guest: Guest, new_state: Guest.GuestState)
+signal guests_paired(first_guest: Guest, second_guest: Guest)
+
+
 func _ready() -> void:
 	var nav_regions := get_tree().get_nodes_in_group("nav_region")
 	if not nav_regions.is_empty():

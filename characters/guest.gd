@@ -18,10 +18,13 @@ enum GuestState {
 @export_range(0.1, 1.0, 0.1, "or_greater", "hide_slider")
 var speed: float = 10.0
 
+var guest_name: String = "Pancrazio Cormorano"
+
 var current_state := GuestState.SEEKING_PARTNER
 
 var _dance_partner: Node2D = null
 var _movement_target: Vector2 # Initialized through tapullo.
+
 
 func is_available() -> bool:
 	return current_state == GuestState.SEEKING_PARTNER
@@ -31,6 +34,7 @@ func set_partner(dance_partner: Node2D) -> bool:
 	if is_instance_valid(dance_partner) and is_available():
 		_dance_partner = dance_partner
 		current_state = GuestState.GETTING_TO_DANCE_POSITION
+		Global.guest_changed_state.emit(self, GuestState.GETTING_TO_DANCE_POSITION)
 		return true
 	return false
 
@@ -44,6 +48,7 @@ func _ready() -> void:
 		await get_tree().physics_frame
 		_movement_target = position
 	tapullo.call_deferred()
+	Global.guest_added.emit(self)
 
 
 func _process(delta: float) -> void:
