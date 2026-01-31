@@ -4,7 +4,7 @@ extends CharacterBody2D
 @onready var head_sprite : AnimatedSprite2D = $Head
 var speed : float = 300
 var knockback_velocity : Vector2 = Vector2.ZERO
-var knockback_speed : float = 1000
+var knockback_speed : float = 700
 var knockback_deceleration : float = 10
 
 func _physics_process(_delta: float) -> void:

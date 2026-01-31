@@ -3,38 +3,26 @@
 [ext_resource type="PackedScene" uid="uid://dclxrpqm3f43c" path="res://Character/Character.tscn" id="1_nsuab"]
 [ext_resource type="Texture2D" uid="uid://lnvptdonb5ap" path="res://RawImages/Victorian Ballroom - Dance - Day - 24x35 - 72 DPI.jpeg" id="2_cknsb"]
 
-[sub_resource type="Curve2D" id="Curve2D_cknsb"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, 64, 8, 0, 0, 0, 0, 24, -16, 0, 0, 0, 0, 0, -56, 0, 0, 0, 0, -24, -16, 0, 0, 0, 0, -64, 8, 0, 0, 0, 0, -24, 32, 0, 0, 0, 0, 0, 72, 0, 0, 0, 0, 24, 32, 0, 0, 0, 0, 64, 8)
-}
-point_count = 9
-
 [node name="Node2D" type="Node2D" unique_id=111766085]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1660843148]
+z_index = -100
 rotation = 1.5707964
+scale = Vector2(2, 2)
 texture = ExtResource("2_cknsb")
 
 [node name="Character" parent="." unique_id=906381017 instance=ExtResource("1_nsuab")]
+scale = Vector2(0.6, 0.6)
 
 [node name="Camera2D" type="Camera2D" parent="Character" unique_id=2143118822]
-limit_left = -1256
-limit_top = -864
-limit_right = 1256
-limit_bottom = 864
+limit_left = -2512
+limit_top = -1728
+limit_right = 2512
+limit_bottom = 1728
 limit_smoothed = true
 
 [node name="Border" type="StaticBody2D" parent="." unique_id=1528639693]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Border" unique_id=1687626137]
 build_mode = 1
-polygon = PackedVector2Array(832, 640, -1024, 640, -1024, -640, 832, -640)
-
-[node name="Path2D" type="Path2D" parent="." unique_id=1346998505]
-position = Vector2(0, -8)
-curve = SubResource("Curve2D_cknsb")
-
-[node name="PathFollow2D" type="PathFollow2D" parent="Path2D" unique_id=144911307]
-position = Vector2(64, 8)
-rotation = -0.54041946
-rotates = false
+polygon = PackedVector2Array(1728, 1344, -2048, 1344, -2048, -1344, 1728, -1344)

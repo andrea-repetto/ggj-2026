@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://byqsbv25532n5" path="res://scripts/guest_manager.gd" id="1_007l3"]
 [ext_resource type="Texture2D" uid="uid://doxhqlep25o1" path="res://icon.svg" id="2_dt86g"]
+[ext_resource type="PackedScene" uid="uid://dgfymu4kpmvk2" path="res://Character/Bouncer.tscn" id="3_4hk26"]
 
 [sub_resource type="Curve2D" id="Curve2D_007l3"]
 _data = {
@@ -24,3 +25,5 @@ cubic_interp = false
 
 [node name="Sprite2D" type="Sprite2D" parent="Path2D/PathFollow2D" unique_id=1748409254]
 texture = ExtResource("2_dt86g")
+
+[node name="Bouncer" parent="Path2D/PathFollow2D/Sprite2D" unique_id=1179255620 instance=ExtResource("3_4hk26")]
