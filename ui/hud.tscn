@@ -13,11 +13,10 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="WantedMaskWidget" parent="." unique_id=2013200229 instance=ExtResource("1_rbyyf")]
+custom_minimum_size = Vector2(0, 32)
 layout_mode = 1
-anchors_preset = 0
-anchor_bottom = 0.0
-offset_bottom = 64.0
-grow_vertical = 1
+offset_right = 65.0
+offset_bottom = 32.0
 
 [node name="TensionLevelWidget" parent="." unique_id=807171946 instance=ExtResource("2_276te")]
 layout_mode = 1
@@ -25,8 +24,4 @@ anchors_preset = -1
 
 [node name="ObjectiveWidget" parent="." unique_id=761866265 instance=ExtResource("3_546lt")]
 layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_bottom = 0.0
-grow_horizontal = 0
-grow_vertical = 1
+offset_left = -256.0
