@@ -15,3 +15,4 @@ scale = Vector2(18.34375, 3920)
 texture = SubResource("GradientTexture1D_amk8m")
 
 [node name="Guest" parent="." unique_id=1891238583 instance=ExtResource("1_amk8m")]
+position = Vector2(572, 339)
