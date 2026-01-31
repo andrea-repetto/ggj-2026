@@ -1,6 +1,8 @@
 extends Control
 
 var quick_time_button : PackedScene = preload("uid://dqr3b18t7nk8q")
+var tension_on_missed : float = 10
+var tension_on_error : float = 20
 
 func _ready() -> void:
 	randomize()
@@ -22,6 +24,7 @@ func _on_action_spawner_timeout() -> void:
 func on_error():
 	%BottomLight.modulate = Color.RED
 	%UpLight.modulate = Color.RED
+	Global.tension_increase(tension_on_error)
 
 func on_correct():
 	%BottomLight.modulate = Color.GREEN
@@ -30,6 +33,7 @@ func on_correct():
 func on_missed():
 	%BottomLight.modulate = Color.YELLOW
 	%UpLight.modulate = Color.YELLOW
+	Global.tension_increase(tension_on_missed)
 
 func on_start_listen():
 	%BottomLight.modulate = Color.WHITE

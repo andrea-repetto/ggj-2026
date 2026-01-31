@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://doxhqlep25o1" path="res://icon.svg" id="2_vbi5m"]
 [ext_resource type="Texture2D" uid="uid://cl5w7kye8y3av" path="res://RawImages/Walk dx - Ballerina Outfit.png" id="4_rh25e"]
 [ext_resource type="Texture2D" uid="uid://drbnnahujwy3n" path="res://RawImages/Walk sx- Ballerina Outfit.png" id="5_0ljut"]
-[ext_resource type="Texture2D" uid="uid://dg0yencj43h2h" path="res://RawImages/Mask_front_-_Jolly-removebg-preview.png" id="5_a8t6m"]
+[ext_resource type="Texture2D" uid="uid://tpr58fefk3e3" path="res://RawImages/dark Jolly front mask-modified.png" id="6_rh25e"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_aetg1"]
 animations = [{
@@ -65,7 +65,7 @@ animations = [{
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("5_a8t6m")
+"texture": ExtResource("6_rh25e")
 }],
 "loop": true,
 "name": &"IDLE",
@@ -86,8 +86,8 @@ sprite_frames = SubResource("SpriteFrames_aetg1")
 animation = &"WALK_SIDE"
 
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="." unique_id=1824791038]
-position = Vector2(-7, -215)
-scale = Vector2(0.3, 0.3)
+position = Vector2(3, -234)
+scale = Vector2(0.09899757, 0.0976684)
 sprite_frames = SubResource("SpriteFrames_rh25e")
 animation = &"IDLE"
 
