@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://dlexhwwvoh8k8"]
 
+[ext_resource type="Script" uid="uid://cbave1kaapacc" path="res://ui/objective_widget.gd" id="1_kw5su"]
+
 [node name="ObjectiveWidget" type="Control" unique_id=807171946]
 layout_mode = 3
 anchors_preset = 15
@@ -7,6 +9,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_kw5su")
 
 [node name="ObjectiveTopLevelContainer" type="VBoxContainer" parent="." unique_id=1714782807]
 layout_mode = 1
