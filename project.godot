@@ -24,6 +24,7 @@ GuestManager="*uid://b0ugtil028ogp"
 
 Bounceable="Things that can get knockbacked. Must implement knockback()"
 nav_region=""
+guest=""
 
 [input]
 
