@@ -103,8 +103,10 @@ func _on_guest_changed_state(guest: Guest, new_state: Guest.GuestState):
 		
 		Guest.GuestState.GETTING_TO_DANCE_POSITION:
 			seeking_queue.erase(guest)
+		
 		Guest.GuestState.DANCING:
-			pass
+			seeking_queue.erase(guest)
+		
 		Guest.GuestState.FOLLOWING_YOU:
 			pass
 		Guest.GuestState.DEAD:

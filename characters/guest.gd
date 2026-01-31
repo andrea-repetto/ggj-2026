@@ -25,7 +25,7 @@ var held_mask: Mask
 var current_state := GuestState.IDLING
 var sought_partner: Guest = null
 
-var _dance_partner: Node2D = null
+var dance_partner: Node2D = null
 var _movement_target: Vector2 # Initialized through tapullo.
 
 
@@ -35,7 +35,7 @@ func is_available() -> bool:
 
 func set_partner(dance_partner: Node2D) -> bool:
 	if is_instance_valid(dance_partner) and is_available():
-		_dance_partner = dance_partner
+		self.dance_partner = dance_partner
 		current_state = GuestState.GETTING_TO_DANCE_POSITION
 		Global.guest_changed_state.emit(self, GuestState.GETTING_TO_DANCE_POSITION)
 		return true
@@ -79,10 +79,13 @@ func _process(delta: float) -> void:
 		
 		GuestState.GETTING_TO_DANCE_POSITION: 
 			print("Scusi, vuol ballare con me~~?")
+		
 		GuestState.DANCING:
 			print("♪┏(・o･)┛♪")
+		
 		GuestState.FOLLOWING_YOU:
 			print("Voglio un po' di schewps, solo io e te!")
+		
 		GuestState.DEAD:
 			print("(×_×)")
 
@@ -96,3 +99,17 @@ func _physics_process(delta: float) -> void:
 func _on_idling_timeout() -> void:
 	current_state = GuestState.SEEKING_PARTNER
 	Global.guest_changed_state.emit(self, GuestState.SEEKING_PARTNER)
+
+
+func _on_interaction_circle_body_entered(body: Node2D) -> void:
+	var other := body as Guest
+	if is_instance_valid(other) and other.sought_partner == self:
+		sought_partner = null
+		dance_partner = other
+		current_state = GuestState.DANCING
+		other.sought_partner = null
+		other.dance_partner = self
+		other.current_state = GuestState.DANCING
+		
+		Global.guest_changed_state.emit(self, GuestState.DANCING)
+		Global.guest_changed_state.emit(other, GuestState.DANCING)

@@ -5,8 +5,14 @@
 [ext_resource type="Texture2D" uid="uid://doxhqlep25o1" path="res://icon.svg" id="3_hyy81"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hyy81"]
+radius = 30.0
+height = 100.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hyy81"]
+radius = 125.0
 
 [node name="Guest" type="CharacterBody2D" unique_id=674562478]
+collision_mask = 3
 script = ExtResource("1_6s3vi")
 speed = 100.0
 metadata/_custom_type_script = "uid://bnhxd8n3qeup3"
@@ -23,4 +29,10 @@ texture = ExtResource("3_hyy81")
 wait_time = 5.0
 one_shot = true
 
+[node name="InteractionCircle" type="Area2D" parent="." unique_id=1903635672]
+
+[node name="CollisionShape" type="CollisionShape2D" parent="InteractionCircle" unique_id=734869791]
+shape = SubResource("CircleShape2D_hyy81")
+
 [connection signal="timeout" from="Timer" to="." method="_on_idling_timeout"]
+[connection signal="body_entered" from="InteractionCircle" to="." method="_on_interaction_circle_body_entered"]

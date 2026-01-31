@@ -14,6 +14,8 @@ signal guest_changed_state(guest: Guest, new_state: Guest.GuestState)
 signal tension_changed(total : float)
 signal mask_changed(in_mask: Mask)
 signal objective_changed(in_name: String)
+signal dancing_couple_formed(dancer1: Node2D, dancer2: Node2D)
+
 
 func _ready() -> void:
 	var nav_regions := get_tree().get_nodes_in_group("nav_region")
