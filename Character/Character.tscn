@@ -1,13 +1,17 @@
 [gd_scene format=3 uid="uid://dclxrpqm3f43c"]
 
 [ext_resource type="Script" uid="uid://c183gv6cm4ty6" path="res://Character/character.gd" id="1_ptld2"]
+[ext_resource type="Texture2D" uid="uid://dnsuyqp72ngh7" path="res://RawImages/Idle - Ballerina Outfit.png" id="2_aetg1"]
 [ext_resource type="Texture2D" uid="uid://doxhqlep25o1" path="res://icon.svg" id="2_vbi5m"]
+[ext_resource type="Texture2D" uid="uid://cl5w7kye8y3av" path="res://RawImages/Walk dx - Ballerina Outfit.png" id="4_rh25e"]
+[ext_resource type="Texture2D" uid="uid://drbnnahujwy3n" path="res://RawImages/Walk sx- Ballerina Outfit.png" id="5_0ljut"]
+[ext_resource type="Texture2D" uid="uid://dg0yencj43h2h" path="res://RawImages/Mask_front_-_Jolly-removebg-preview.png" id="5_a8t6m"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_aetg1"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_vbi5m")
+"texture": ExtResource("2_aetg1")
 }],
 "loop": true,
 "name": &"IDLE",
@@ -39,7 +43,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_vbi5m")
+"texture": ExtResource("4_rh25e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_0ljut")
 }],
 "loop": true,
 "name": &"WALK_SIDE",
@@ -54,6 +61,17 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_rh25e"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_a8t6m")
+}],
+"loop": true,
+"name": &"IDLE",
+"speed": 5.0
+}]
+
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_a8t6m"]
 radius = 125.0
 height = 350.0
@@ -63,8 +81,15 @@ motion_mode = 1
 script = ExtResource("1_ptld2")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1094185350]
+scale = Vector2(0.3, 0.3)
 sprite_frames = SubResource("SpriteFrames_aetg1")
-animation = &"WALK_UP"
+animation = &"WALK_SIDE"
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="." unique_id=1824791038]
+position = Vector2(-7, -215)
+scale = Vector2(0.3, 0.3)
+sprite_frames = SubResource("SpriteFrames_rh25e")
+animation = &"IDLE"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2065306827]
 shape = SubResource("CapsuleShape2D_a8t6m")

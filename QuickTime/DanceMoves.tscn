@@ -1,0 +1,90 @@
+[gd_scene format=3 uid="uid://cfmr3w4dptq0t"]
+
+[ext_resource type="Script" uid="uid://8udqlkl2dmfv" path="res://QuickTime/dance_moves.gd" id="1_4uih1"]
+[ext_resource type="Texture2D" uid="uid://p1lv0ehlkq47" path="res://QuickTime/maps-arrow.svg" id="2_5yerh"]
+
+[sub_resource type="Gradient" id="Gradient_pjci2"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_d0ijg"]
+gradient = SubResource("Gradient_pjci2")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.9, 0.1)
+
+[node name="DanceMoves" type="Control" unique_id=1953030392]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4uih1")
+
+[node name="BottomArrow" type="TextureRect" parent="." unique_id=1460069561]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -32.0
+offset_top = 18.0
+offset_right = 32.0
+offset_bottom = 82.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_5yerh")
+
+[node name="BottomLight" type="TextureRect" parent="BottomArrow" unique_id=625407351]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_d0ijg")
+
+[node name="UpArrow" type="TextureRect" parent="." unique_id=317964039]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -31.794983
+offset_top = -82.0
+offset_right = 32.205017
+offset_bottom = -18.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_5yerh")
+flip_v = true
+
+[node name="UpLight" type="TextureRect" parent="UpArrow" unique_id=1192196575]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_d0ijg")
+
+[node name="ActionSpawner" type="Timer" parent="." unique_id=662935982]
+autostart = true
+
+[connection signal="timeout" from="ActionSpawner" to="." method="_on_action_spawner_timeout"]
