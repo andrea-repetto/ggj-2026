@@ -4,13 +4,12 @@
 [ext_resource type="Texture2D" uid="uid://doxhqlep25o1" path="res://icon.svg" id="2_01w4p"]
 
 [node name="TensionLevelWidget" type="Control" unique_id=27047908]
-custom_minimum_size = Vector2(256, 32)
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = -896.0
-offset_bottom = -616.0
+offset_right = -1664.0
+offset_bottom = -1048.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_f4enq")
@@ -20,6 +19,7 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = -60.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -28,5 +28,7 @@ layout_mode = 2
 texture = ExtResource("2_01w4p")
 expand_mode = 2
 
-[node name="Progress" type="TextureProgressBar" parent="TopLevelContainer" unique_id=1821858924]
+[node name="Progress" type="ProgressBar" parent="TopLevelContainer" unique_id=1636014983]
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1

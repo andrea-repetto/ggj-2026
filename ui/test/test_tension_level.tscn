@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://dvlswb8356uql"]
+
+[ext_resource type="Script" uid="uid://csem3dtpah3oc" path="res://ui/test/test_tension_level.gd" id="1_al24l"]
+[ext_resource type="PackedScene" uid="uid://dc7uf8k3182kk" path="res://ui/tension_level_widget.tscn" id="2_6il41"]
+
+[node name="TestTensionLevel" type="Node2D" unique_id=648166774]
+script = ExtResource("1_al24l")
+
+[node name="TensionLevelWidget" parent="." unique_id=27047908 instance=ExtResource("2_6il41")]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 200.0
+offset_top = 200.0
+offset_right = 456.0
+offset_bottom = 232.0
+grow_horizontal = 1
+grow_vertical = 1
