@@ -25,3 +25,7 @@ func _ready() -> void:
 func update_tension(amount : float):
 	current_tension = clamp(current_tension + amount, 0, max_tension)
 	tension_changed.emit(current_tension)
+
+func send_message(message : String):
+	if !get_tree().get_first_node_in_group("Messanger").is_active:
+		!get_tree().get_first_node_in_group("Messanger").send_message(message)

@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://nt0wg0polqh2"]
+
+[ext_resource type="Script" uid="uid://0gdeiq78eakl" path="res://ui/instruction_text.gd" id="1_77tpo"]
+
+[node name="InstructionText" type="RichTextLabel" unique_id=1234754867]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -0.5
+offset_right = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1e-05, 1e-05)
+theme_override_font_sizes/normal_font_size = 70
+theme_override_font_sizes/bold_font_size = 70
+theme_override_font_sizes/bold_italics_font_size = 70
+theme_override_font_sizes/italics_font_size = 70
+theme_override_font_sizes/mono_font_size = 70
+bbcode_enabled = true
+text = "[wave amp=50.0 freq=5.0 connected=1]Go dance with someone[/wave]"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+script = ExtResource("1_77tpo")
