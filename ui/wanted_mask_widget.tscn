@@ -3,21 +3,17 @@
 [ext_resource type="Script" uid="uid://b7vmhe63nmukt" path="res://ui/wanted_mask_widget.gd" id="1_hl6q0"]
 [ext_resource type="Texture2D" uid="uid://doxhqlep25o1" path="res://icon.svg" id="2_mfdmr"]
 
-[node name="WantedMaskWidget" type="Control" unique_id=751786864]
-custom_minimum_size = Vector2(256, 32)
-layout_mode = 3
-anchors_preset = 0
-offset_right = 256.0
-offset_bottom = 40.0
+[node name="WantedMaskWidget" type="PanelContainer" unique_id=1863088264]
+offset_right = 332.0
+offset_bottom = 88.0
 script = ExtResource("1_hl6q0")
 
 [node name="TopLevelContainer" type="HBoxContainer" parent="." unique_id=456644102]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 2
 
 [node name="WantedLabel" type="Label" parent="TopLevelContainer" unique_id=436507138]
 layout_mode = 2
+theme_override_font_sizes/font_size = 64
 text = "Wanted"
 vertical_alignment = 1
 

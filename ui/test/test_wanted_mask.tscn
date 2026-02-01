@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://di8i5mvgql54s"]
+
+[ext_resource type="Script" uid="uid://1ta8w5jojgbv" path="res://ui/test/test_wanted_mask.gd" id="1_afnt2"]
+[ext_resource type="PackedScene" uid="uid://d4h8mg7gih850" path="res://ui/wanted_mask_widget.tscn" id="2_j8c7k"]
+
+[node name="TestWantedMask" type="Node2D" unique_id=290134908]
+script = ExtResource("1_afnt2")
+
+[node name="WantedMaskWidget" parent="." unique_id=751786864 instance=ExtResource("2_j8c7k")]
+
+[node name="Timer" type="Timer" parent="." unique_id=60598963]
