@@ -1,10 +1,10 @@
 [gd_resource type="Resource" script_class="Mask" format=3 uid="uid://bnewbo2a2a8g"]
 
-[ext_resource type="Texture2D" uid="uid://doxhqlep25o1" path="res://icon.svg" id="1_imd0q"]
+[ext_resource type="Texture2D" uid="uid://bumiio573jq28" path="res://assets/sprites/mask/mask-bauta-front.png" id="1_imd0q"]
 [ext_resource type="Script" uid="uid://fc7dr1qkmpbo" path="res://mask/mask.gd" id="2_74qgs"]
 
 [resource]
 script = ExtResource("2_74qgs")
 icon = ExtResource("1_imd0q")
-display_name = "Mask 3"
+display_name = "Bauta"
 metadata/_custom_type_script = "uid://fc7dr1qkmpbo"

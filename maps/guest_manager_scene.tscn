@@ -27,3 +27,11 @@ cubic_interp = false
 texture = ExtResource("2_dt86g")
 
 [node name="Bouncer" parent="Path2D/PathFollow2D/Sprite2D" unique_id=1179255620 instance=ExtResource("3_4hk26")]
+position = Vector2(-239.0271, 66.73671)
+
+[node name="Sprite2D2" type="Sprite2D" parent="Path2D/PathFollow2D" unique_id=1070986916]
+position = Vector2(-185.90085, 327.30838)
+texture = ExtResource("2_dt86g")
+
+[node name="Bouncer" parent="Path2D/PathFollow2D/Sprite2D2" unique_id=539690192 instance=ExtResource("3_4hk26")]
+position = Vector2(-239.0271, 66.73671)

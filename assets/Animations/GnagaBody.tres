@@ -1,0 +1,35 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://d0nrcaju7hl25"]
+
+[ext_resource type="Texture2D" uid="uid://df0ankey2f025" path="res://assets/sprites/character/gnaga-front-idle.png" id="1_n7t4q"]
+[ext_resource type="Texture2D" uid="uid://cqagiwyfjy0wt" path="res://assets/sprites/character/gnaga-right-idle.png" id="2_a1f6c"]
+[ext_resource type="Texture2D" uid="uid://vg67qdiwu5qn" path="res://assets/sprites/character/gnaga-right-walk.png" id="3_3iakh"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_n7t4q")
+}],
+"loop": true,
+"name": &"IDLE",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_a1f6c")
+}],
+"loop": true,
+"name": &"IDLE_SIDE",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_3iakh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_a1f6c")
+}],
+"loop": true,
+"name": &"WALK_SIDE",
+"speed": 5.0
+}]

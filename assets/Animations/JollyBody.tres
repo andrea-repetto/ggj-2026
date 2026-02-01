@@ -1,0 +1,31 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://l7tn5spixfay"]
+
+[ext_resource type="Texture2D" uid="uid://dbwv76n53me6p" path="res://assets/sprites/character/jolly-front-idle.png" id="1_fgtmv"]
+[ext_resource type="Texture2D" uid="uid://cecko2d80v4o3" path="res://assets/sprites/character/jolly-right-idle.png" id="2_8jpea"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_fgtmv")
+}],
+"loop": true,
+"name": &"IDLE",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_8jpea")
+}],
+"loop": true,
+"name": &"IDLE_SIDE",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_8jpea")
+}],
+"loop": true,
+"name": &"WALK_SIDE",
+"speed": 5.0
+}]

@@ -1,7 +1,7 @@
 class_name GuestManagerClass
 extends Node
 
-@onready var follower : PathFollow2D = $Path2D/PathFollow2D
+@onready var dance_master : PathFollow2D = $Path2D/PathFollow2D
 var tween_step : float = 0.25
 var tween_time : float = 1.5
 
@@ -87,7 +87,7 @@ func _ready() -> void:
 func dance_step():
 	var t : Tween = create_tween()
 	t.set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN_OUT)
-	t.tween_property(follower, "progress_ratio", follower.progress_ratio+tween_step, tween_time)
+	t.tween_property(dance_master, "progress_ratio", dance_master.progress_ratio+tween_step, tween_time)
 	t.finished.connect(dance_step)
 
 func _on_guest_added(guest: Guest):
@@ -129,8 +129,7 @@ func _on_guest_changed_state(guest: Guest, new_state: Guest.GuestState):
 func _on_dancing_couple_formed(dancer1: Node2D, dancer2: Node2D) -> void:
 	# Assuming that both dancers have the same parent.
 	var dancers_parent := dancer1.get_parent()
-	
 	var dancing_couple := dancing_couple_scene.instantiate() as DancingCouple
 	dancing_couple.initialize([dancer1, dancer2])
-	dancers_parent.add_child.call_deferred(dancing_couple)
+	dance_master.add_child.call_deferred(dancing_couple)
 	dancing_couples.append(dancing_couple)

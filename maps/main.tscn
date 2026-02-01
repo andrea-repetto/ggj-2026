@@ -4,8 +4,14 @@
 [ext_resource type="Texture2D" uid="uid://lnvptdonb5ap" path="res://RawImages/Victorian Ballroom - Dance - Day - 24x35 - 72 DPI.jpeg" id="2_cknsb"]
 [ext_resource type="PackedScene" uid="uid://iqxxobye5fo5" path="res://ui/hud.tscn" id="3_nsuab"]
 [ext_resource type="AudioStream" uid="uid://vpu8a8xq2uy5" path="res://Sounds/Rondò Veneziano.mp3" id="4_72qrf"]
+[ext_resource type="PackedScene" uid="uid://cwwq0q0h4onxt" path="res://characters/guest.tscn" id="5_oduwx"]
 
-[node name="Node2D" type="Node" unique_id=896637833]
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_oduwx"]
+vertices = PackedVector2Array(1654, 1270, -2038, 1270, -2038, -1270, 1654, -1270)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-2048, 1280, 1664, 1280, 1664, -1280, -2048, -1280)])
+
+[node name="Main" type="Node" unique_id=896637833]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1660843148]
 z_index = -100
@@ -37,3 +43,12 @@ parameters/looping = true
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=454165866]
 
 [node name="Hud" parent="CanvasLayer" unique_id=1625275594 instance=ExtResource("3_nsuab")]
+
+[node name="Guest" parent="." unique_id=674562478 instance=ExtResource("5_oduwx")]
+position = Vector2(232, -496)
+
+[node name="Guest2" parent="." unique_id=1765752151 instance=ExtResource("5_oduwx")]
+position = Vector2(-704, -424)
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="." unique_id=1755097817 groups=["nav_region"]]
+navigation_polygon = SubResource("NavigationPolygon_oduwx")

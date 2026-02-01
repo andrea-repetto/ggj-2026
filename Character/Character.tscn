@@ -37,7 +37,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_jgnii")
+"texture": ExtResource("4_tofhs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_xsea5")
 }],
 "loop": true,
 "name": &"WALK_DOWN",
@@ -56,7 +59,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_jgnii")
+"texture": ExtResource("4_tofhs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_xsea5")
 }],
 "loop": true,
 "name": &"WALK_UP",
@@ -134,7 +140,7 @@ script = ExtResource("1_jgnii")
 [node name="Body" type="AnimatedSprite2D" parent="." unique_id=1094185350]
 scale = Vector2(0.25, 0.25)
 sprite_frames = SubResource("SpriteFrames_aetg1")
-animation = &"WALK_UP"
+animation = &"WALK_DOWN"
 
 [node name="Head" type="AnimatedSprite2D" parent="." unique_id=1824791038]
 position = Vector2(-5, -190)

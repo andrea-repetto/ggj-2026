@@ -1,10 +1,9 @@
 class_name DancingCouple
-extends Node
+extends Node2D
 
 
 var dancers: Array[Node2D] = []
 var player: Character = null
-
 
 func initialize(_dancers: Array[Node2D]) -> void:
 	dancers = _dancers
@@ -17,7 +16,6 @@ func initialize(_dancers: Array[Node2D]) -> void:
 		dancer.get_parent().remove_child.call_deferred(dancer)
 		add_child.call_deferred(dancer)
 
-
 func _notification(what: int) -> void:
 	if what == NOTIFICATION_PREDELETE:
 		if is_instance_valid(player):
@@ -25,4 +23,4 @@ func _notification(what: int) -> void:
 		
 		for dancer in dancers:
 			remove_child(dancer)
-			get_parent().add_child(dancer)
+			get_tree().get_root().get_node("/root/Main").add_child(dancer)

@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Mask" format=3 uid="uid://detv5hxpwtfls"]
 
-[ext_resource type="Texture2D" uid="uid://doxhqlep25o1" path="res://icon.svg" id="1_5lsck"]
+[ext_resource type="Texture2D" uid="uid://dh027ua6e35ae" path="res://assets/sprites/mask/mask-moretta-right.png" id="1_5lsck"]
 [ext_resource type="Script" uid="uid://fc7dr1qkmpbo" path="res://mask/mask.gd" id="2_pvful"]
 
 [resource]
