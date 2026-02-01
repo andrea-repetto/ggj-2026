@@ -23,5 +23,5 @@ func _ready() -> void:
 		nav_region_RID = nav_regions[0].get_rid()
 
 func update_tension(amount : float):
-	current_tension = clamp(current_tension-amount, 0, max_tension)
+	current_tension = clamp(current_tension + amount, 0, max_tension)
 	tension_changed.emit(current_tension)
